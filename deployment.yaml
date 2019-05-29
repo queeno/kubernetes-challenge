@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-challenge-deployment
+  labels:
+    app: k8s-challenge
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-challenge
+  template:
+    metadata:
+      labels:
+        app: k8s-challenge
+    spec:
+      containers:
+      - name: k8s-challenge
+        image: k8s-challenge:latest
+        env:
+        - name: NAME
+          valueFrom:
+            configMapKeyRef:
+              name: k8s-challenge
+              key: NAME
+        ports:
+        - containerPort: 4000
+        imagePullPolicy: IfNotPresent

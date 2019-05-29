@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  NAME: Simon
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2019-05-29T12:08:04Z"
+  name: k8s-challenge
+  namespace: default
+  resourceVersion: "72919"
+  selfLink: /api/v1/namespaces/default/configmaps/k8s-challenge
+  uid: 696b3f57-820a-11e9-99d8-0800274c7351
